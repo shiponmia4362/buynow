@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Vintage T9 Trimmer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            text-align: center;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 2px 0;
+        }
+
+    
+        .product-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .product-image img {
+            width: 200px;
+        }
+        .product-details {
+            margin-left: 20px;
+        }
+        .price {
+            font-size: 20px;
+            color: #d9534f;
+        }
+        .order-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            box-shadow: 0 3px #0056b3;
+        }
+        .checkout-box {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgb(154, 245, 7);
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            
+        }
+        
+    </style>
+</head>
+<body style="margin: 0; padding: 0; font-family: Arial, sans-serif; text-align: center; background: linear-gradient(135deg, #ff9a9e, #fad0c4); color: #333;">
+    <header>
+        <h1>SHP Bazar</h1>
+    </header>
+
+   
+    <main>
+        <div class="product-container">
+            <div class="product-image">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcQV_v7f7nHsDj43w94XJZ3Q48s_8YAP0a3brRXwSymZOV4vyaRTkRRxqv1i5EQ9h0cyFtWHEC_jbqYQqajXD_frqmEXX3xQNdYP6vol8Tm2CGvGnl0rrSdiAJnmDWgD9tjsaeefntceT9I9nQfliUt-tEQlUf5hQ-m5h9zANJXVPQs3RlUy8QdwaeTVAv/s16000/IMG_20240927_100952_295.jpg" alt="Vintage T9 Trimmer">
+            </div>
+            <div class="product-details">
+                <h2>Vintage T9 Trimmer</h2>
+                <p><strong>Price:</strong> TK. <span id="product-price">300</span></p>
+                <button class="order-btn" onclick="openCheckout()">Order Now</button>
+            </div>
+        </div>
+    </main>
+    
+    
+    <fieldset style="max-width: 800px; margin: auto; padding: 20px; background: linear-gradient(145deg, #ffffff, #a0caec); border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); border: 2px solid #ff8c00; text-align: center;">
+        <legend style="font-size: 22px; font-weight: bold; color: #ff6a00; padding: 5px 15px; background: #fff; border-radius: 5px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);">
+            Product Description
+        </legend>
+        <p style="font-size: 18px; color: #444; line-height: 1.6; margin-top: 10px;">
+            This is a high-quality product designed for your daily needs. Made from premium materials, 
+            it ensures durability and comfort. Available in multiple colors and sizes.
+        </p>
+    </fieldset>
+    
+    
+
+
+
+
+    <div class="checkout-box" id="checkoutBox">
+        <h3>Checkout</h3>
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcQV_v7f7nHsDj43w94XJZ3Q48s_8YAP0a3brRXwSymZOV4vyaRTkRRxqv1i5EQ9h0cyFtWHEC_jbqYQqajXD_frqmEXX3xQNdYP6vol8Tm2CGvGnl0rrSdiAJnmDWgD9tjsaeefntceT9I9nQfliUt-tEQlUf5hQ-m5h9zANJXVPQs3RlUy8QdwaeTVAv/s16000/IMG_20240927_100952_295.jpg" width="100" alt="Product Image">
+        <p><strong>Product:</strong> Vintage T9 Trimmer</p>
+        <p><strong>Price:</strong> TK. <span id="checkout-price">300</span></p>
+        <label 
+style="font-size: 11px; font-weight: bold; color: #fff; background: linear-gradient(145deg, #080808, #0a0501); padding: 1px 3px; border-radius: 6px; display: inline-block; box-shadow: 0 1px #cc5200, 0 1px 2px rgba(0, 0, 0, 0.2); transition: all 0.3s ease-in-out;">
+    Quantity:
+</label>
+
+
+
+        <button onclick="updateQuantity(-1)" 
+style="font-size: 14px; font-weight: bold; color: white; background: linear-gradient(145deg, #dc3545, #c82333); padding: 2px 5px; border: none; border-radius: 5%; cursor: pointer; box-shadow: 0 5px #a71d2a, 0 2px 5px rgba(0, 0, 0, 0.2); transition: all 0.3s ease-in-out; position: relative; overflow: hidden;" 
+onmouseover="this.style.boxShadow='0 5px #921723, 0 2px 5px rgba(0, 0, 0, 0.3)'" 
+onmouseout="this.style.boxShadow='0 2px #a71d2a, 0 2px 5px rgba(0, 0, 0, 0.2)'" 
+onmousedown="this.style.transform='translateY(4px)'" 
+onmouseup="this.style.transform='translateY(0px)'">
+    −
+</button>
+
+<span id="quantity" 
+style="font-size: 12px; font-weight: bold; color: #fff; background: linear-gradient(145deg, #007bff, #0056b3); padding: 1px 3px; border-radius: 8px; display: inline-block; text-align: center; min-width: 20px; box-shadow: 0 4px #004494, 0 2px 4px rgba(0, 0, 0, 0.2); transition: all 0.3s ease-in-out;">
+    1
+</span>
+
+        <button onclick="updateQuantity(1)" 
+style="font-size: 14px; font-weight: bold; color: white; background: linear-gradient(145deg, #28a745, #218838); padding: 2px 5px; border: none; border-radius: 5%; cursor: pointer; box-shadow: 0 5px #1c7430, 0 2px 5px rgba(0, 0, 0, 0.2); transition: all 0.3s ease-in-out; position: relative; overflow: hidden;" 
+onmouseover="this.style.boxShadow='0 5px #1b6f2d, 0 2px 5px rgba(0, 0, 0, 0.3)'" 
+onmouseout="this.style.boxShadow='0 2px #1c7430, 0 2px 5px rgba(0, 0, 0, 0.2)'" 
+onmousedown="this.style.transform='translateY(4px)'" 
+onmouseup="this.style.transform='translateY(0px)'">
+    +
+</button>
+
+
+
+
+
+        <button onclick="closeCheckout()" 
+style="font-size: 10px; font-weight: bold; color: white; background: linear-gradient(145deg, #ff4b5c, #ff1a2a); padding: 1px 3px; border: none; border-radius: 50%; cursor: pointer; box-shadow: 0 5px #e60000, 0 1px 3px rgba(0, 0, 0, 0.2); transition: all 0.3s ease-in-out; position: relative; overflow: hidden;"
+onmouseover="this.style.boxShadow='0 2px #cc0000, 0 1px 2px rgba(0, 0, 0, 0.3)'" 
+onmouseout="this.style.boxShadow='0 1px #e60000, 0 1px 2px rgba(0, 0, 0, 0.2)'" 
+onmousedown="this.style.transform='translateY(4px)'" 
+onmouseup="this.style.transform='translateY(0px)'">
+    ✖
+</button>
+
+        <br><br><br>
+        <button onclick="openBilling()" 
+style="font-size: 18px; font-weight: bold; color: white; background: linear-gradient(145deg, #ff8c00, #4b04a8); padding: 5px 10px; border: none; border-radius: 10px; cursor: pointer; box-shadow: 0 6px #e65c00, 0 5px 10px rgba(0, 0, 0, 0.2); transition: all 0.3s ease-in-out; position: relative; overflow: hidden;"
+onmouseover="this.style.boxShadow='0 5px #cc5200, 0 2px 5px rgba(0, 0, 0, 0.3)'" 
+onmouseout="this.style.boxShadow='0 2px #e65c00, 0 5px 10px rgba(0, 0, 0, 0.2)'" 
+onmousedown="this.style.transform='translateY(4px)'" 
+onmouseup="this.style.transform='translateY(0px)'">
+    Checkout
+</button>
+
+    </div>
+
+    <div class="checkout-box" id="billingBox" style="display: none;">
+        <h3>Billing Information</h3>
+        <form onsubmit="submitOrder(event)">
+            <input type="text" id="name" placeholder="Your Name" required
+            style="font-size: 15px; padding: 6px 10px; width: 250px; border: 1px solid #007bff; border-radius: 8px; outline: none; transition: all 0.3s ease-in-out; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);" 
+onfocus="this.style.borderColor='#0056b3'; this.style.boxShadow='0 6px 10px rgba(0, 0, 0, 0.2)'" 
+onblur="this.style.borderColor='#007bff'; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.1)'" >
+            
+            
+            <br>
+
+            <input type="email" id="email" placeholder="Your Email" required
+            style="font-size: 15px; padding: 6px 10px; width: 250px; border: 1px solid #007bff; border-radius: 8px; outline: none; transition: all 0.3s ease-in-out; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);" 
+onfocus="this.style.borderColor='#0056b3'; this.style.boxShadow='0 6px 10px rgba(0, 0, 0, 0.2)'" 
+onblur="this.style.borderColor='#007bff'; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.1)'" >
+
+            <br>
+
+            <input type="text" id="phone" placeholder="Your Mobile Number" required
+            style="font-size: 15px; padding: 6px 10px; width: 250px; border: 1px solid #007bff; border-radius: 8px; outline: none; transition: all 0.3s ease-in-out; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);" 
+onfocus="this.style.borderColor='#0056b3'; this.style.boxShadow='0 6px 10px rgba(0, 0, 0, 0.2)'" 
+onblur="this.style.borderColor='#007bff'; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.1)'" >
+
+            <br>
+
+            <input type="text" id="division" placeholder="Division" required
+            style="font-size: 15px; padding: 6px 10px; width: 250px; border: 1px solid #007bff; border-radius: 8px; outline: none; transition: all 0.3s ease-in-out; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);" 
+onfocus="this.style.borderColor='#0056b3'; this.style.boxShadow='0 6px 10px rgba(0, 0, 0, 0.2)'" 
+onblur="this.style.borderColor='#007bff'; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.1)'" >
+
+            <br>
+
+            <input type="text" id="district" placeholder="District" required
+            style="font-size: 15px; padding: 6px 10px; width: 250px; border: 1px solid #007bff; border-radius: 8px; outline: none; transition: all 0.3s ease-in-out; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);" 
+onfocus="this.style.borderColor='#0056b3'; this.style.boxShadow='0 6px 10px rgba(0, 0, 0, 0.2)'" 
+onblur="this.style.borderColor='#007bff'; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.1)'" >
+
+            <br>
+
+            <input type="text" id="thana" placeholder="Thana" required
+            style="font-size: 15px; padding: 6px 10px; width: 250px; border: 1px solid #007bff; border-radius: 8px; outline: none; transition: all 0.3s ease-in-out; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);" 
+onfocus="this.style.borderColor='#0056b3'; this.style.boxShadow='0 6px 10px rgba(0, 0, 0, 0.2)'" 
+onblur="this.style.borderColor='#007bff'; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.1)'" >
+            
+            <br>
+
+
+
+
+            <input type="text" id="address" placeholder="Your Address" required 
+style="font-size: 15px; padding: 6px 10px; width: 250px; border: 1px solid #007bff; border-radius: 8px; outline: none; transition: all 0.3s ease-in-out; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);" 
+onfocus="this.style.borderColor='#0056b3'; this.style.boxShadow='0 6px 10px rgba(0, 0, 0, 0.2)'" 
+onblur="this.style.borderColor='#007bff'; this.style.boxShadow='0 4px 6px rgba(0, 0, 0, 0.1)'" >
+
+<br><br>
+
+
+
+           <button type="submit" style="font-size: 20px; font-weight: bold; color: white; background: linear-gradient(145deg, #1e90ff, #007bff); padding: 2px 6px; border: none; border-radius: 12px; cursor: pointer; box-shadow: 0 5px #0056b3, 0 4px 10px rgba(0, 0, 0, 0.3); transition: all 0.3s ease-in-out; position: relative; overflow: hidden;" 
+onmouseover="this.style.boxShadow='0 4px #0056b3, 0 3px 5px rgba(0, 0, 0, 0.4)'" 
+onmouseout="this.style.boxShadow='0 1px #0056b3, 0 2px 5px rgba(0, 0, 0, 0.3)'" 
+onmousedown="this.style.transform='translateY(3px)'" 
+onmouseup="this.style.transform='translateY(0px)'">
+    Submit
+</button>
+
+
+        </form><br>
+
+        <button onclick="closeBilling()" 
+style="font-size: 18px; font-weight: bold; color: white; background: linear-gradient(145deg, #ff4b5c, #ff1a2a); padding: 2px 6px; border: none; border-radius: 10px; cursor: pointer; box-shadow: 0 6px #e60000, 0 4px 10px rgba(0, 0, 0, 0.2); transition: all 0.3s ease-in-out; position: relative; overflow: hidden;"
+onmouseover="this.style.boxShadow='0 4px #cc0000, 0 3px 5px rgba(0, 0, 0, 0.3)'" 
+onmouseout="this.style.boxShadow='0 1px #e60000, 0 2px 5px rgba(0, 0, 0, 0.2)'" 
+onmousedown="this.style.transform='translateY(4px)'" 
+onmouseup="this.style.transform='translateY(0px)'">
+    Close
+</button>
+    </div>
+
+    <script>
+        let basePrice = 300;
+        function openCheckout() {
+            document.getElementById('checkoutBox').style.display = 'block';
+        }
+        function closeCheckout() {
+            document.getElementById('checkoutBox').style.display = 'none';
+        }
+        function updateQuantity(amount) {
+            let quantityElement = document.getElementById('quantity');
+            let priceElement = document.getElementById('checkout-price');
+            let quantity = parseInt(quantityElement.innerText);
+            if (quantity + amount > 0) {
+                quantity += amount;
+                quantityElement.innerText = quantity;
+                priceElement.innerText = basePrice * quantity;
+            }
+        }
+        function openBilling() {
+            document.getElementById('billingBox').style.display = 'block';
+        }
+        function closeBilling() {
+            document.getElementById('billingBox').style.display = 'none';
+        }
+        function submitOrder(event) {
+            event.preventDefault();
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let phone = document.getElementById('phone').value;
+            let division = document.getElementById('division').value;
+            let district = document.getElementById('district').value;
+            let thana = document.getElementById('thana').value;
+            let address = document.getElementById('address').value;
+            let quantity = document.getElementById('quantity').innerText;
+            let price = document.getElementById('checkout-price').innerText;
+            let mailtoLink = `mailto:shiponmia436249@gmail.com?subject=New Order&body=Name: ${name}%0D%0AEmail: ${email}%0D%0APhone: ${phone}%0D%0ADivision: ${division}%0D%0ADistrict: ${district}%0D%0AThana: ${thana}%0D%0AAddress: ${address}%0D%0AProduct: Vintage T9 Trimmer%0D%0AQuantity: ${quantity}%0D%0ATotal Price: TK. ${price}`;
+            window.location.href = mailtoLink;
+        }
+    </script>
+
+
+
+
+<footer style="width: 100%; background: linear-gradient(145deg, #333, #111); color: white; text-align: center; padding: 20px; box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2); position: relative; bottom: 0;">
+
+    <div style="max-width: 1200px; margin: auto;">
+        <p style="font-size: 18px; margin-bottom: 10px;">&copy; 2025 Your Company. All Rights Reserved.</p>
+        
+        <div>
+            <a href="#" style="margin: 0 10px; text-decoration: none; color: white; font-size: 20px;">Home</a> |
+            <a href="#" style="margin: 0 10px; text-decoration: none; color: white; font-size: 20px;">About</a> |
+            <a href="#" style="margin: 0 10px; text-decoration: none; color: white; font-size: 20px;">Contact</a>
+        </div>
+
+        <div style="margin-top: 15px;">
+            <a href="#" style="margin: 0 10px; color: white; font-size: 22px;">🔵</a>
+            <a href="#" style="margin: 0 10px; color: white; font-size: 22px;">🟢</a>
+            <a href="#" style="margin: 0 10px; color: white; font-size: 22px;">🔴</a>
+        </div>
+    </div>
+
+</footer>
+
+
+</body>
+</html>
