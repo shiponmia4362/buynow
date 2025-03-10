@@ -14,13 +14,19 @@
             background-color: #f8f8f8;
             text-align: center;
         }
-        header {
-            background-color: #333;
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, #007bff, #0056b3);
             color: white;
-            padding: 2px 0;
+            padding: 20px;
+            font-size: 1.8em;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 0 0 15px 15px;
         }
-
-    
+        
         .product-container {
             display: flex;
             justify-content: center;
@@ -62,13 +68,55 @@
             border-radius: 20px;
             
         }
+
+
+
+
+        .chat-icons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .chat-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .chat-icons a:hover {
+            transform: scale(1.1);
+        }
+        
+        .chat-icons img {
+            width: 30px;
+            height: 30px;
+        }
+        
+
+
+
+
         
     </style>
 </head>
 <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; text-align: center; background: linear-gradient(135deg, #ff9a9e, #fad0c4); color: #333;">
-    <header>
-        <h1>SHP Bazar</h1>
-    </header>
+    
+    
+    <div class="header"><center>
+       <marquee>
+        Welcome to Our 3D Product Store
+       </marquee> </center>
+    </div>
 
    
     <main>
@@ -282,26 +330,11 @@ onmouseup="this.style.transform='translateY(0px)'">
 
 
 
-<footer style="width: 100%; background: linear-gradient(145deg, #333, #111); color: white; text-align: center; padding: 20px; box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2); position: relative; bottom: 0;">
-
-    <div style="max-width: 1200px; margin: auto;">
-        <p style="font-size: 18px; margin-bottom: 10px;">&copy; 2025 Your Company. All Rights Reserved.</p>
-        
-        <div>
-            <a href="#" style="margin: 0 10px; text-decoration: none; color: white; font-size: 20px;">Home</a> |
-            <a href="#" style="margin: 0 10px; text-decoration: none; color: white; font-size: 20px;">About</a> |
-            <a href="#" style="margin: 0 10px; text-decoration: none; color: white; font-size: 20px;">Contact</a>
-        </div>
-
-        <div style="margin-top: 15px;">
-            <a href="#" style="margin: 0 10px; color: white; font-size: 22px;">🔵</a>
-            <a href="#" style="margin: 0 10px; color: white; font-size: 22px;">🟢</a>
-            <a href="#" style="margin: 0 10px; color: white; font-size: 22px;">🔴</a>
-        </div>
-    </div>
-
-</footer>
-
+<div class="chat-icons">
+    <a href="tel:+8801960670704" title="Call Us"><img src="call-icon.png" alt="Call"></a>
+    <a href="https://wa.me/8801960670704" target="_blank" title="WhatsApp"><img src="whatsapp-icon.png" alt="WhatsApp"></a>
+    <a href="https://www.facebook.com/messages/e2ee/t/26477642481850177" target="_blank" title="Messenger"><img src="messenger-icon.png" alt="Messenger"></a>
+</div>
 
 </body>
 </html>
